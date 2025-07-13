@@ -84,23 +84,23 @@ console.log("--- Morning Routine ---");
 let myAssistant = new PersonalAssistant("Ava");
 console.log(`Hi! I'm ${myAssistant.name}, your assistant.`);
 
-// 2. Add at least 3 real tasks from your week
-myAssistant.addTask("Finish JavaScript assignment");
-myAssistant.addTask("Go grocery shopping");
-myAssistant.addTask("Schedule dentist appointment");
-myAssistant.addTask("Review project proposal"); // Adding a fourth task for variety
+// 2. 3 tasks from my week
+myAssistant.addTask("Groom my cats");
+myAssistant.addTask("Work on my homework");
+myAssistant.addTask("Go thrifting");
+myAssistant.addTask("Do my laundry"); // Adding a fourth task for variety
 
-// 3. Report the mood before completing tasks
+// 3. Report mood before completing tasks
 console.log("\n--- Before Tasks ---");
 myAssistant.setMood("focused"); // Setting an initial mood for the day
 myAssistant.reportMood();
 
-// 4. Complete 1-2 of them
+// 4. Complete tasks
 console.log("\n--- Task Completion ---");
 myAssistant.completeTask(); // Completing the first task
 myAssistant.completeTask(); // Completing a second task
 
-// 5. Report the mood after completing tasks
+// 5. Report mood after completing tasks
 console.log("\n--- After Tasks ---");
 myAssistant.setMood("accomplished"); // Changing mood after completing tasks
 myAssistant.reportMood();
@@ -110,4 +110,3 @@ myAssistant.reportMood(); // Final mood check
 myAssistant.completeTask(); // Trying to complete another task (should show remaining)
 myAssistant.completeTask(); // Trying to complete another task (should show remaining)
 myAssistant.completeTask(); // Trying to complete another task (should show no tasks left)
-
