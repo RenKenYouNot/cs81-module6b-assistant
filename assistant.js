@@ -23,8 +23,6 @@ function PersonalAssistant(name) {
   this.mood = "neutral";
 }
 
-// ... (code from Commit 1) ...
-
 /**
  * Adds a new task to the assistant's task list.
  * @param {string} task - The description of the task to be added.
@@ -65,3 +63,51 @@ PersonalAssistant.prototype.reportMood = function() {
   // This output displays the current 'mood' property of the assistant.
   console.log(`${this.name}'s current mood: ${this.mood}.`);
 };
+
+/**
+ * Sets a new mood for the assistant.
+ * @param {string} newMood - The new mood to set (e.g., "productive", "accomplished", "tired").
+ */
+PersonalAssistant.prototype.setMood = function(newMood) {
+  // 'this' refers to the specific PersonalAssistant instance.
+  // Updates the 'mood' property of the assistant.
+  this.mood = newMood;
+  // This output confirms the mood has been updated.
+  console.log(`${this.name}: Mood updated to ${this.mood}.`);
+};
+
+// --- SIMULATING A DAY IN YOUR LIFE ---
+
+// 1. Introduce the assistant
+console.log("--- Morning Routine ---");
+// Creating a new PersonalAssistant instance named 'Ava'.
+let myAssistant = new PersonalAssistant("Ava");
+console.log(`Hi! I'm ${myAssistant.name}, your assistant.`);
+
+// 2. Add at least 3 real tasks from your week
+myAssistant.addTask("Finish JavaScript assignment");
+myAssistant.addTask("Go grocery shopping");
+myAssistant.addTask("Schedule dentist appointment");
+myAssistant.addTask("Review project proposal"); // Adding a fourth task for variety
+
+// 3. Report the mood before completing tasks
+console.log("\n--- Before Tasks ---");
+myAssistant.setMood("focused"); // Setting an initial mood for the day
+myAssistant.reportMood();
+
+// 4. Complete 1-2 of them
+console.log("\n--- Task Completion ---");
+myAssistant.completeTask(); // Completing the first task
+myAssistant.completeTask(); // Completing a second task
+
+// 5. Report the mood after completing tasks
+console.log("\n--- After Tasks ---");
+myAssistant.setMood("accomplished"); // Changing mood after completing tasks
+myAssistant.reportMood();
+
+console.log("\n--- End of Day Summary ---");
+myAssistant.reportMood(); // Final mood check
+myAssistant.completeTask(); // Trying to complete another task (should show remaining)
+myAssistant.completeTask(); // Trying to complete another task (should show remaining)
+myAssistant.completeTask(); // Trying to complete another task (should show no tasks left)
+
